@@ -4,16 +4,16 @@
 * Se o número for zero, escreva 'zero' e número correspondente.
 */
 
-let alunoPresentes = 25;
+let alunoPresente = 25;
 
-for (let i = 0; i <= alunoPresentes; i++){
+for (let i = 0; i <= alunoPresente; i++){
     if(i == 0) {
         console.log("Zero " + i);
     }else{
     if(i % 2 == 0) {
         console.log("Par " + i);
     }else{
-        console.log("impar " + i);
+        console.log("Ímpar " + i);
     }
 }
 }
