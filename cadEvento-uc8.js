@@ -5,27 +5,41 @@
 */
 const rs = require("readline-sync");
 
-
-let data = new Date();
+let dataAtual = new Date();
 let dataEvento = new Date ('2022-06-30');
-let idade = rs.question("informe a sua idade: ");
-let qtdeVagas = 100;
-let nome = "Flavia";
-let sobrenome ="Lima";
-let listaParticipantes = ["Joao, Maria, Deisiane"];
-let listaPalestrantes = ["Guilherme José, Maria Fernanda, Deisiane Lima"];
- 
+let qtdeVagas = 50;
+let nomeCompleto = "Flavia Lima";
 
-if(dataEvento < data){
-    console.log("Data do evento inválida.");
+
+if(dataEvento < dataAtual){
+    console.log("Data do evento inválida. O cadastro não poderá ser realizado.");
 }else{
-    console.log("Bem- vindo a nossa página, por favor preencha os campos solicitados: ")
+    console.log("Bem- vindo a nossa página, por favor preencha os campos solicitados: ", "\n" );
 }
+
+let idade = rs.question("Informe a sua idade: " , "\n");
+
 if( idade < 18 || qtdeVagas >100){
-    console.log("Cadastro não realizado. Por favor, verifique a idade informado ou a quantidade de vagas disponíveis.");
+    console.log("Cadastro não realizado. Por favor, verifique a idade informada ou a quantidade de vagas disponíveis.");
 }else{
     let publico = rs.question("Voce e um participante ou palestrante? ");
-    console.log("Bem- vindo (a) " + nome + " " + sobrenome);
+        console.log("Bem- vindo (a) " + nomeCompleto);
 }
-console.log("Lista Participantes: " + listaPalestrantes);
-console.log("Lista Palestrantes: " + listaParticipantes);
+
+let participantes = ["Joao, Maria, Deisiane, Flávia,"];
+
+let qtdeParticipantes = participantes.length;
+
+for(let i = 0; i < qtdeParticipantes; i++){
+    let listaParticipantes = participantes[i];
+    console.log("Participantes " + listaParticipantes , "\n");
+}
+
+let palestrantes = ["Guilherme José, Maria Fernanda"];
+
+let qtdePalestrantes = palestrantes.length;
+
+for(let i = 0; i < qtdePalestrantes; i++){
+    let listaPalestrantes = palestrantes[i];
+    console.log("Palestrantes " + listaPalestrantes);
+}
